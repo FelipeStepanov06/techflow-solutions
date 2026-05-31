@@ -20,3 +20,20 @@ class GerenciadorTarefas:
 
     def listar_tarefas(self):
         return self.tarefas
+
+
+if __name__ == "__main__":
+    sistema = GerenciadorTarefas()
+
+    print("=== Iniciando TechFlow Solutions ===")
+    
+
+    print("\nAdicionando tarefas ao sistema...")
+    t1 = sistema.criar_tarefa("Despacho Carga A", "Rota Litoral", "Alta")
+    t2 = sistema.criar_tarefa("Manutenção Frota", "Revisão do caminhão 04")
+    
+
+    print("\n=== Lista de Tarefas Atuais ===")
+    lista = sistema.listar_tarefas()
+    for tarefa in lista:
+        print(f"ID: {tarefa['id']} | Título: {tarefa['titulo']} | Prioridade: {tarefa['prioridade']}")
